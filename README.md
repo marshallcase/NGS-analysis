@@ -27,5 +27,21 @@ combine individual read files into a single dataframe object for analysis
 
 Use NGS_merge.py and merge.sh
 
-step 4)
-analyze data using analysis_script.py
+step 4a)
+
+read counts per round of sorting: analyze data using analysis_script.py
+
+step 4b)
+
+analyze SORTCERY data using reads_plots.py
+analyze gate scores using gate_score_analysis.py
+
+step 5)
+
+machine learning - explore models and performance using ml_script.py
+
+step 6)
+
+perform ILP - ILP_order2.py
+
+
