@@ -20,6 +20,7 @@ index=0
 filepath1 = sys.argv[1]
 listOfDataFrames = [filepath1.split('.')[0]]
 
+#create dictionary of dataframes, one for each NGS pool
 DFdict = {name: pd.DataFrame() for name in listOfDataFrames}
 
 if not os.path.exists(filepath1):
@@ -46,6 +47,7 @@ for subdir, dirs, files in os.walk(rootdir):
     if subdir.find('__pycache__') == -1:
         print(os.path.join(subdir, filepath1))
         print('forward DNA')
+        #use .decode("utf-8") when on Great Lakes cluster and remove it when on local computer
         sequences = [seq_record.seq._data.decode("utf-8") for seq_record in SeqIO.parse(filepath1,"fastq")] #.decode("utf-8")
         print('make dataframe')
         DFdict[listOfDataFrames[index]] = pd.DataFrame(list(zip(sequences)),columns=['DNA'])
