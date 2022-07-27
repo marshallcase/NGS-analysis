@@ -27,6 +27,9 @@ combine individual read files into a single dataframe object for analysis
 
 Use NGS_merge.py and merge.sh
 
+step 4)
+filter merged reads by quality (gate score, read counts, etc.) using reads_plots.py
+
 step 4a)
 
 read counts per round of sorting: analyze data using analysis_script.py
